@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohamed Al Najjar - Backend Developer specializing in Node.js, NestJS, and Express.js. Building scalable RESTful APIs and backend systems.">
+    <meta name="keywords" content="Backend Developer, Node.js, NestJS, Express.js, REST API, MongoDB, PostgreSQL, Docker, JavaScript, TypeScript">
+    <meta name="author" content="Mohamed Al Najjar">
+    <meta property="og:title" content="Mohamed Al Najjar | Backend Developer">
+    <meta property="og:description" content="Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohamedalnajjar.dev">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamed Al Najjar | Backend Developer">
+    <meta name="twitter:description" content="Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.">
+    <title>Mohamed Al Najjar | Backend Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="#hero" class="logo">
+                <img src="imgs/qqq.jpg" alt="MN Logo" class="logo-img">
+                <span>MN</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#projects" onclick="toggleMenu()">Projects</a>
+        <a href="#education" onclick="toggleMenu()">Education</a>
+        <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-glow"></div>
+        <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+        <div class="hero-3d-torus">
+            <div class="torus">
+                <div class="torus-ring"></div>
+                <div class="torus-ring"></div>
+                <div class="torus-ring"></div>
+                <div class="torus-ring"></div>
+                <div class="torus-ring"></div>
+                <div class="torus-ring"></div>
+            </div>
+        </div>
+
+        <div class="hero-3d-scene">
+            <div class="cube">
+                <div class="cube-face front">const</div>
+                <div class="cube-face back">async</div>
+                <div class="cube-face right">await</div>
+                <div class="cube-face left">return</div>
+                <div class="cube-face top">export</div>
+                <div class="cube-face bottom">import</div>
+            </div>
+        </div>
+
+        <div class="hero-3d-octahedron">
+            <div class="octa">
+                <div class="octa-face"></div>
+                <div class="octa-face"></div>
+                <div class="octa-face"></div>
+                <div class="octa-face"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-greeting">Hello, I'm</div>
+                    <h1 class="hero-name">
+                        <span class="first">Mohamed </span><span class="last">Al Najjar</span>
+                    </h1>
+                    <div class="hero-title-wrapper">
+                        <span id="typingText"></span><span class="typing-cursor"></span>
+                    </div>
+                    <p class="hero-tagline">Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.</p>
+                    <div class="hero-meta">
+                        <div class="hero-meta-item"><i class="fas fa-map-marker-alt"></i> Egypt</div>
+                        <div class="hero-meta-item"><i class="fas fa-phone"></i> +20 122 863 5405</div>
+                        <div class="hero-meta-item"><i class="fas fa-envelope"></i> mohamedalnajjar1000@gmail.com</div>
+                    </div>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" class="hero-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/mohamedalnajjar10" target="_blank" class="hero-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://wa.me/201228635405" target="_blank" class="hero-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-container">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <img src="imgs/شو me.jpg" alt="Mohamed Al Najjar" class="avatar-img">
+                        </div>
+                        <div class="avatar-code">
+                            <span>const </span>dev = <span>"</span>MN<span>"</span>;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">// About Me</span>
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in-left">
+                    <p>Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems using <strong style="color:var(--accent)">Node.js</strong>, <strong style="color:var(--accent)">Express.js</strong>, <strong style="color:var(--accent)">NestJS</strong>, and <strong style="color:var(--accent)">Laravel</strong>. Proficient in database design and optimization with <strong style="color:var(--accent)">MySQL</strong>, <strong style="color:var(--accent)">PostgreSQL</strong>, and <strong style="color:var(--accent)">MongoDB</strong>.</p>
+                    <p>Skilled in implementing secure authentication using <strong style="color:var(--accent)">JWT</strong>, real-time communication via <strong style="color:var(--accent)">WebSocket</strong> and <strong style="color:var(--accent)">Socket.io</strong>, and writing clean, maintainable code.</p>
+                    <p>Achieved a <strong style="color:var(--accent)">45% improvement</strong> in query response times through database optimization, and scaled systems to handle <strong style="color:var(--accent)">1,800+ concurrent users</strong> with <strong style="color:var(--accent)">99.7% uptime</strong>.</p>
+                </div>
+                <div class="about-stats fade-in-right">
+                    <div class="stat-card stagger-1">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-card stagger-2">
+                        <span class="stat-number">11</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-card stagger-3">
+                        <span class="stat-number">45%</span>
+                        <span class="stat-label">Query Optimization</span>
+                    </div>
+                    <div class="stat-card stagger-4">
+                        <span class="stat-number">99.7%</span>
+                        <span class="stat-label">System Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">// Tech Stack</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category fade-in stagger-1">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="skill-category-title">Languages</h3>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-percent">95%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-header"><span class="skill-bar-name">TypeScript</span><span class="skill-bar-percent">90%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-bar-header"><span class="skill-bar-name">PHP</span><span class="skill-bar-percent">75%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-2">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3 class="skill-category-title">Frameworks</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">NestJS</span>
+                        <span class="skill-tag">Laravel</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-3">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-database"></i></div>
+                        <h3 class="skill-category-title">Databases</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Sequelize</span>
+                        <span class="skill-tag">Prisma</span>
+                        <span class="skill-tag">TypeORM</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-1">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="skill-category-title">Tools & DevOps</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Swagger</span>
+                        <span class="skill-tag">REST API</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-2">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="skill-category-title">Auth & Security</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">OAuth</span>
+                        <span class="skill-tag">RBAC</span>
+                        <span class="skill-tag">Middleware</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-3">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="skill-category-title">Real-Time & Testing</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">WebSocket</span>
+                        <span class="skill-tag">Socket.io</span>
+                        <span class="skill-tag">Jest</span>
+                        <span class="skill-tag">Unit Testing</span>
+                        <span class="skill-tag">Integration Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in stagger-1" style="grid-column: 1 / -1;">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="skill-category-title">Practices</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">RESTful API Design</span>
+                        <span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">Clean Code Principles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">// Work</span>
+                <h2 class="section-title">Experience & Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card fade-in stagger-1">
+                    <span class="project-date">01/2026</span>
+                    <h3 class="project-title">Gaza-Express-Project</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>Prisma</span><span>Jest</span><span>TypeScript</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed backend services for a comprehensive delivery platform</li>
+                        <li>Implemented automated testing with Jest for reliability</li>
+                        <li>Built scalable APIs with NestJS and Prisma ORM</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-2">
+                    <span class="project-date">03/2026</span>
+                    <h3 class="project-title">Care-Project</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>Prisma</span><span>TypeScript</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Designed and developed backend for healthcare management system</li>
+                        <li>Implemented clean architecture and modular design patterns</li>
+                        <li>Built RESTful APIs with authentication and authorization</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-3">
+                    <span class="project-date">11/2025</span>
+                    <h3 class="project-title">Property Booking Marketplace</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>Prisma</span><span>TypeScript</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built a property booking marketplace with real-time availability</li>
+                        <li>Implemented complex queries and data relationships</li>
+                        <li>Developed booking workflow and payment integration</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-1">
+                    <span class="project-date">12/2025</span>
+                    <h3 class="project-title">Store</h3>
+                    <div class="project-tech">
+                        <span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed a full-featured e-commerce store backend with Laravel</li>
+                        <li>Implemented Blade templating for server-side rendering</li>
+                        <li>Built admin dashboard and inventory management</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-2">
+                    <span class="project-date">06/2025</span>
+                    <h3 class="project-title">Live Sports Streaming Platform</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>MySQL</span><span>Sequelize</span><span>WebSocket</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed real-time sports streaming platform with WebSocket integration</li>
+                        <li>Built live match tracking and real-time score updates</li>
+                        <li>Optimized database queries for high-traffic scenarios</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-3">
+                    <span class="project-date">02/2025</span>
+                    <h3 class="project-title">Task Management System</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>TypeScript</span><span>REST API</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built a task management system with role-based access control</li>
+                        <li>Implemented CRUD operations with proper validation</li>
+                        <li>Designed modular architecture for scalability</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-1">
+                    <span class="project-date">01/2025</span>
+                    <h3 class="project-title">Blood Bank System</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>MySQL</span><span>Sequelize</span><span>TypeScript</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed a blood bank management system with donor registration</li>
+                        <li>Built API endpoints for blood inventory tracking</li>
+                        <li>Implemented search and filtering for donation records</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-2">
+                    <span class="project-date">06/2024</span>
+                    <h3 class="project-title">Movies APIs</h3>
+                    <div class="project-tech">
+                        <span>Express.js</span><span>Node.js</span><span>TMDB</span><span>REST API</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Integrated TMDB API for movie data retrieval and search</li>
+                        <li>Built RESTful API with caching for performance optimization</li>
+                        <li>Implemented pagination and filtering capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-3">
+                    <span class="project-date">04/2024</span>
+                    <h3 class="project-title">Digital Wallet System</h3>
+                    <div class="project-tech">
+                        <span>Express.js</span><span>Node.js</span><span>MongoDB</span><span>JWT</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed a digital wallet with secure transaction processing</li>
+                        <li>Implemented JWT authentication and RBAC</li>
+                        <li>Built real-time balance updates and transaction history</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-1">
+                    <span class="project-date">02/2024</span>
+                    <h3 class="project-title">Real-Time Chat Application</h3>
+                    <div class="project-tech">
+                        <span>NestJS</span><span>Socket.io</span><span>WebSocket</span><span>MongoDB</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built a real-time chat application using WebSocket and Socket.io</li>
+                        <li>Implemented rooms, private messaging, and online status</li>
+                        <li>Designed scalable message storage and retrieval</li>
+                    </ul>
+                </div>
+
+                <div class="project-card fade-in stagger-2">
+                    <span class="project-date">03/2024</span>
+                    <h3 class="project-title">E-Commerce Backend System</h3>
+                    <div class="project-tech">
+                        <span>Express.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed a complete e-commerce backend with product management</li>
+                        <li>Implemented shopping cart, checkout, and order processing</li>
+                        <li>Built admin APIs for inventory and user management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">// Education</span>
+                <h2 class="section-title">Academic Background</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>Bachelor's Degree in Software Engineering</h3>
+                        <div class="institution">Al Azhar University, Gaza, Palestine</div>
+                        <div class="period">2020 — 2026</div>
+                        <p>Pursuing a comprehensive education in software engineering principles, algorithms, data structures, software design patterns, and systems architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">// Certifications</span>
+                <h2 class="section-title">Professional Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card fade-in stagger-1">
+                    <div class="cert-icon"><i class="fab fa-node-js"></i></div>
+                    <div class="cert-info">
+                        <h4>Node.js Application Developer</h4>
+                        <span class="cert-year">2024</span>
+                    </div>
+                </div>
+                <div class="cert-card fade-in stagger-2">
+                    <div class="cert-icon"><i class="fas fa-feather-alt"></i></div>
+                    <div class="cert-info">
+                        <h4>NestJS Application Developer</h4>
+                        <span class="cert-year">2024</span>
+                    </div>
+                </div>
+                <div class="cert-card fade-in stagger-3">
+                    <div class="cert-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="cert-info">
+                        <h4>Understanding SDLC, System Requirements, Agile, Scrum & Jira</h4>
+                        <span class="cert-year">2025</span>
+                    </div>
+                </div>
+                <div class="cert-card fade-in stagger-1">
+                    <div class="cert-icon"><i class="fab fa-docker"></i></div>
+                    <div class="cert-info">
+                        <h4>Docker Practical Course</h4>
+                        <span class="cert-year">2026</span>
+                    </div>
+                </div>
+                <div class="cert-card fade-in stagger-2">
+                    <div class="cert-icon"><i class="fab fa-gitlab"></i></div>
+                    <div class="cert-info">
+                        <h4>GitLab CI/CD</h4>
+                        <span class="cert-year">2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" class="footer-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/mohamedalnajjar10" target="_blank" class="footer-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:mohamedalnajjar1000@gmail.com" class="footer-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/201228635405" target="_blank" class="footer-link" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="footer-text">&copy; 2026 Mohamed Al Najjar. All rights reserved.</p>
+            <p class="footer-text">Built with by Mohamed Al Najjar</p>
+            <a href="#hero" class="back-to-top" aria-label="Back to top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
