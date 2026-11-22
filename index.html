@@ -1,537 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohamed Al Najjar - Backend Developer specializing in Node.js, NestJS, and Express.js. Building scalable RESTful APIs and backend systems.">
-    <meta name="keywords" content="Backend Developer, Node.js, NestJS, Express.js, REST API, MongoDB, PostgreSQL, Docker, JavaScript, TypeScript">
-    <meta name="author" content="Mohamed Al Najjar">
-    <meta property="og:title" content="Mohamed Al Najjar | Backend Developer">
-    <meta property="og:description" content="Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mohamedalnajjar.dev">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohamed Al Najjar | Backend Developer">
-    <meta name="twitter:description" content="Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.">
-    <title>Mohamed Al Najjar | Backend Developer</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.">
+<meta name="theme-color" content="#142461">
+<title>Mohamed Al Najjar | Node.js Backend Developer</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC3UlEQVR4nO2aX0hTURzHv/ut2uYWWWZRZmZUsGaJ4Ev5hyRChXooCKmn/keIvRW99tZLLxUS2BqFRBREQUStoWuUlumDGoE666k0HdHKue1ubXHPvNe5P1dltu1YHxjnd8+fy+97vuecO3anggKrtxwPIwtwOS2qZG2qbE58LkJUPCSuJIR4Sz42V1kArxBvsy8h5cy9AyoeZz8a7h0gcA6BcwicQ+AcAucQ/jUBj1svYnzoNvuYr52b0Xb5UoPcNtR9Xa7ve31Vru+yXQHRzC+VZ4/tk9tLjBv/rgB9jlaOq3dvh1o9fYuaqhI5Nhh0CccXF63B/tpyLBQ03wEGw7SA3BV6lO0oZvG6tSth3FYgty1REzSapQnvcf5MPTInQB8RMDbunjHrUvll5Htc31hKSzYx9zIq4NHTd6ysqTSxcm91RMCd+/a4vhLDn0cR/B1icdMCuUDzHZCj07CyzdGPXxNelJVuZnWVu4z4Nu5Gm+NDUgGiO8+sPSzeU2HCTlNRegWIiUoniMcroKNrgK31o4ersCrXAJu9D16vP+F+kWg2v5DjptP16RUQnZAgBPDqzUcWN56sZeVLey98/oDiHujp/YS33YMsPlBXjqLC/DQKiErI7w/A0RERsGF9HoRAkAmaTYDIjZbnrFSrCY2n6pAZAUIQA86vGB37wa473w9iwuODzyck7B+Ntb0Xg8MjLD5yqIIdxxlxQERyQVz/InNxIBwOo9kccUGrXYaGgxVIiwB9TuQEkhwQabxwC/lbT+CmxcquBSGIUCisKEDk4ZNO+VlSWJCXrk2si3MgEeIGj+0f3yeIlrs2pEoKeyC5AO+UOCUHRCz32uGZnD520yZAXMPiDCZD2sjLEzwHonH/nETrAwdS4f/PKpmGwDkEziFwDoFzCJxD4BwC5xA4h8A5pPQSOdtxOS0q/h3ALK/ysxXXVM6LwwHeXHBF5bq4/uyBGLJFiNLq+ANq0weTxuBVBQAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-<body>
-    <nav>
-        <div class="nav-inner">
-            <a href="#hero" class="logo">
-                <img src="imgs/qqq.jpg" alt="MN Logo" class="logo-img">
-                <span>MN</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-            </ul>
-            <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="frame nav-layout">
+    <a class="brand" href="index.html#top"><span aria-hidden="true">MN</span> Mohamed Al Najjar</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#projects">Projects</a>
     </nav>
-
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#hero" onclick="toggleMenu()">Home</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#skills" onclick="toggleMenu()">Skills</a>
-        <a href="#projects" onclick="toggleMenu()">Projects</a>
-        <a href="#education" onclick="toggleMenu()">Education</a>
-        <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+    <a class="button compact primary" href="index.html#contact">Contact</a>
+  </div>
+</header>
+<main id="main">
+<section class="intro-panel" aria-labelledby="name">
+  <div class="frame intro-layout">
+    <div>
+      <p class="location">Egypt</p>
+      <h1 id="name">Mohamed Al Najjar<span>.</span></h1>
+      <p class="role">Node.js Backend Developer</p>
+      <p class="intro-copy">I build backend APIs, third-party integrations, and data workflows with Node.js and TypeScript.</p>
+      <div class="link-row hero-actions">
+        <a class="button primary" href="#projects">Explore projects</a>
+        <a class="button outline" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" download>Download CV</a>
+        <a class="text-action" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" target="_blank" rel="noopener">View CV<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
     </div>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-bg-glow"></div>
-        <canvas class="particles-canvas" id="particlesCanvas"></canvas>
-
-        <div class="hero-3d-torus">
-            <div class="torus">
-                <div class="torus-ring"></div>
-                <div class="torus-ring"></div>
-                <div class="torus-ring"></div>
-                <div class="torus-ring"></div>
-                <div class="torus-ring"></div>
-                <div class="torus-ring"></div>
-            </div>
-        </div>
-
-        <div class="hero-3d-scene">
-            <div class="cube">
-                <div class="cube-face front">const</div>
-                <div class="cube-face back">async</div>
-                <div class="cube-face right">await</div>
-                <div class="cube-face left">return</div>
-                <div class="cube-face top">export</div>
-                <div class="cube-face bottom">import</div>
-            </div>
-        </div>
-
-        <div class="hero-3d-octahedron">
-            <div class="octa">
-                <div class="octa-face"></div>
-                <div class="octa-face"></div>
-                <div class="octa-face"></div>
-                <div class="octa-face"></div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-greeting">Hello, I'm</div>
-                    <h1 class="hero-name">
-                        <span class="first">Mohamed </span><span class="last">Al Najjar</span>
-                    </h1>
-                    <div class="hero-title-wrapper">
-                        <span id="typingText"></span><span class="typing-cursor"></span>
-                    </div>
-                    <p class="hero-tagline">Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems.</p>
-                    <div class="hero-meta">
-                        <div class="hero-meta-item"><i class="fas fa-map-marker-alt"></i> Egypt</div>
-                        <div class="hero-meta-item"><i class="fas fa-phone"></i> +20 122 863 5405</div>
-                        <div class="hero-meta-item"><i class="fas fa-envelope"></i> mohamedalnajjar1000@gmail.com</div>
-                    </div>
-                    <div class="hero-links">
-                        <a href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" class="hero-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/mohamedalnajjar10" target="_blank" class="hero-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://wa.me/201228635405" target="_blank" class="hero-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-avatar">
-                    <div class="avatar-container">
-                        <div class="avatar-ring"></div>
-                        <div class="avatar-inner">
-                            <img src="imgs/شو me.jpg" alt="Mohamed Al Najjar" class="avatar-img">
-                        </div>
-                        <div class="avatar-code">
-                            <span>const </span>dev = <span>"</span>MN<span>"</span>;
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">// About Me</span>
-                <h2 class="section-title">Professional Summary</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text fade-in-left">
-                    <p>Results-driven Backend Developer with 2+ years of experience building scalable RESTful APIs and backend systems using <strong style="color:var(--accent)">Node.js</strong>, <strong style="color:var(--accent)">Express.js</strong>, <strong style="color:var(--accent)">NestJS</strong>, and <strong style="color:var(--accent)">Laravel</strong>. Proficient in database design and optimization with <strong style="color:var(--accent)">MySQL</strong>, <strong style="color:var(--accent)">PostgreSQL</strong>, and <strong style="color:var(--accent)">MongoDB</strong>.</p>
-                    <p>Skilled in implementing secure authentication using <strong style="color:var(--accent)">JWT</strong>, real-time communication via <strong style="color:var(--accent)">WebSocket</strong> and <strong style="color:var(--accent)">Socket.io</strong>, and writing clean, maintainable code.</p>
-                    <p>Achieved a <strong style="color:var(--accent)">45% improvement</strong> in query response times through database optimization, and scaled systems to handle <strong style="color:var(--accent)">1,800+ concurrent users</strong> with <strong style="color:var(--accent)">99.7% uptime</strong>.</p>
-                </div>
-                <div class="about-stats fade-in-right">
-                    <div class="stat-card stagger-1">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-card stagger-2">
-                        <span class="stat-number">11</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-card stagger-3">
-                        <span class="stat-number">45%</span>
-                        <span class="stat-label">Query Optimization</span>
-                    </div>
-                    <div class="stat-card stagger-4">
-                        <span class="stat-number">99.7%</span>
-                        <span class="stat-label">System Uptime</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">// Tech Stack</span>
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category fade-in stagger-1">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-code"></i></div>
-                        <h3 class="skill-category-title">Languages</h3>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-percent">95%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-bar-header"><span class="skill-bar-name">TypeScript</span><span class="skill-bar-percent">90%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-                    </div>
-                    <div class="skill-bar-wrapper">
-                        <div class="skill-bar-header"><span class="skill-bar-name">PHP</span><span class="skill-bar-percent">75%</span></div>
-                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-2">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3 class="skill-category-title">Frameworks</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">NestJS</span>
-                        <span class="skill-tag">Laravel</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-3">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-database"></i></div>
-                        <h3 class="skill-category-title">Databases</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Sequelize</span>
-                        <span class="skill-tag">Prisma</span>
-                        <span class="skill-tag">TypeORM</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-1">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-tools"></i></div>
-                        <h3 class="skill-category-title">Tools & DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">Swagger</span>
-                        <span class="skill-tag">REST API</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-2">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="skill-category-title">Auth & Security</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JWT</span>
-                        <span class="skill-tag">OAuth</span>
-                        <span class="skill-tag">RBAC</span>
-                        <span class="skill-tag">Middleware</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-3">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-bolt"></i></div>
-                        <h3 class="skill-category-title">Real-Time & Testing</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">WebSocket</span>
-                        <span class="skill-tag">Socket.io</span>
-                        <span class="skill-tag">Jest</span>
-                        <span class="skill-tag">Unit Testing</span>
-                        <span class="skill-tag">Integration Testing</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in stagger-1" style="grid-column: 1 / -1;">
-                    <div class="skill-category-header">
-                        <div class="skill-category-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h3 class="skill-category-title">Practices</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">RESTful API Design</span>
-                        <span class="skill-tag">GraphQL</span>
-                        <span class="skill-tag">Clean Code Principles</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">// Work</span>
-                <h2 class="section-title">Experience & Projects</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-grid">
-
-                <div class="project-card fade-in stagger-1">
-                    <span class="project-date">01/2026</span>
-                    <h3 class="project-title">Gaza-Express-Project</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>Prisma</span><span>Jest</span><span>TypeScript</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed backend services for a comprehensive delivery platform</li>
-                        <li>Implemented automated testing with Jest for reliability</li>
-                        <li>Built scalable APIs with NestJS and Prisma ORM</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-2">
-                    <span class="project-date">03/2026</span>
-                    <h3 class="project-title">Care-Project</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>Prisma</span><span>TypeScript</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Designed and developed backend for healthcare management system</li>
-                        <li>Implemented clean architecture and modular design patterns</li>
-                        <li>Built RESTful APIs with authentication and authorization</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-3">
-                    <span class="project-date">11/2025</span>
-                    <h3 class="project-title">Property Booking Marketplace</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>Prisma</span><span>TypeScript</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Built a property booking marketplace with real-time availability</li>
-                        <li>Implemented complex queries and data relationships</li>
-                        <li>Developed booking workflow and payment integration</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-1">
-                    <span class="project-date">12/2025</span>
-                    <h3 class="project-title">Store</h3>
-                    <div class="project-tech">
-                        <span>PHP</span><span>Laravel</span><span>Blade</span><span>MySQL</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed a full-featured e-commerce store backend with Laravel</li>
-                        <li>Implemented Blade templating for server-side rendering</li>
-                        <li>Built admin dashboard and inventory management</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-2">
-                    <span class="project-date">06/2025</span>
-                    <h3 class="project-title">Live Sports Streaming Platform</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>MySQL</span><span>Sequelize</span><span>WebSocket</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed real-time sports streaming platform with WebSocket integration</li>
-                        <li>Built live match tracking and real-time score updates</li>
-                        <li>Optimized database queries for high-traffic scenarios</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-3">
-                    <span class="project-date">02/2025</span>
-                    <h3 class="project-title">Task Management System</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>TypeScript</span><span>REST API</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Built a task management system with role-based access control</li>
-                        <li>Implemented CRUD operations with proper validation</li>
-                        <li>Designed modular architecture for scalability</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-1">
-                    <span class="project-date">01/2025</span>
-                    <h3 class="project-title">Blood Bank System</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>MySQL</span><span>Sequelize</span><span>TypeScript</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed a blood bank management system with donor registration</li>
-                        <li>Built API endpoints for blood inventory tracking</li>
-                        <li>Implemented search and filtering for donation records</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-2">
-                    <span class="project-date">06/2024</span>
-                    <h3 class="project-title">Movies APIs</h3>
-                    <div class="project-tech">
-                        <span>Express.js</span><span>Node.js</span><span>TMDB</span><span>REST API</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Integrated TMDB API for movie data retrieval and search</li>
-                        <li>Built RESTful API with caching for performance optimization</li>
-                        <li>Implemented pagination and filtering capabilities</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-3">
-                    <span class="project-date">04/2024</span>
-                    <h3 class="project-title">Digital Wallet System</h3>
-                    <div class="project-tech">
-                        <span>Express.js</span><span>Node.js</span><span>MongoDB</span><span>JWT</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed a digital wallet with secure transaction processing</li>
-                        <li>Implemented JWT authentication and RBAC</li>
-                        <li>Built real-time balance updates and transaction history</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-1">
-                    <span class="project-date">02/2024</span>
-                    <h3 class="project-title">Real-Time Chat Application</h3>
-                    <div class="project-tech">
-                        <span>NestJS</span><span>Socket.io</span><span>WebSocket</span><span>MongoDB</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Built a real-time chat application using WebSocket and Socket.io</li>
-                        <li>Implemented rooms, private messaging, and online status</li>
-                        <li>Designed scalable message storage and retrieval</li>
-                    </ul>
-                </div>
-
-                <div class="project-card fade-in stagger-2">
-                    <span class="project-date">03/2024</span>
-                    <h3 class="project-title">E-Commerce Backend System</h3>
-                    <div class="project-tech">
-                        <span>Express.js</span><span>Node.js</span><span>MongoDB</span><span>REST API</span>
-                    </div>
-                    <ul class="project-desc">
-                        <li>Developed a complete e-commerce backend with product management</li>
-                        <li>Implemented shopping cart, checkout, and order processing</li>
-                        <li>Built admin APIs for inventory and user management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">// Education</span>
-                <h2 class="section-title">Academic Background</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <h3>Bachelor's Degree in Software Engineering</h3>
-                        <div class="institution">Al Azhar University, Gaza, Palestine</div>
-                        <div class="period">2020 — 2026</div>
-                        <p>Pursuing a comprehensive education in software engineering principles, algorithms, data structures, software design patterns, and systems architecture.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <div class="container">
-            <div class="section-header fade-in">
-                <span class="section-label">// Certifications</span>
-                <h2 class="section-title">Professional Certifications</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="certs-grid">
-                <div class="cert-card fade-in stagger-1">
-                    <div class="cert-icon"><i class="fab fa-node-js"></i></div>
-                    <div class="cert-info">
-                        <h4>Node.js Application Developer</h4>
-                        <span class="cert-year">2024</span>
-                    </div>
-                </div>
-                <div class="cert-card fade-in stagger-2">
-                    <div class="cert-icon"><i class="fas fa-feather-alt"></i></div>
-                    <div class="cert-info">
-                        <h4>NestJS Application Developer</h4>
-                        <span class="cert-year">2024</span>
-                    </div>
-                </div>
-                <div class="cert-card fade-in stagger-3">
-                    <div class="cert-icon"><i class="fas fa-project-diagram"></i></div>
-                    <div class="cert-info">
-                        <h4>Understanding SDLC, System Requirements, Agile, Scrum & Jira</h4>
-                        <span class="cert-year">2025</span>
-                    </div>
-                </div>
-                <div class="cert-card fade-in stagger-1">
-                    <div class="cert-icon"><i class="fab fa-docker"></i></div>
-                    <div class="cert-info">
-                        <h4>Docker Practical Course</h4>
-                        <span class="cert-year">2026</span>
-                    </div>
-                </div>
-                <div class="cert-card fade-in stagger-2">
-                    <div class="cert-icon"><i class="fab fa-gitlab"></i></div>
-                    <div class="cert-info">
-                        <h4>GitLab CI/CD</h4>
-                        <span class="cert-year">2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" class="footer-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/mohamedalnajjar10" target="_blank" class="footer-link" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:mohamedalnajjar1000@gmail.com" class="footer-link" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://wa.me/201228635405" target="_blank" class="footer-link" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            <p class="footer-text">&copy; 2026 Mohamed Al Najjar. All rights reserved.</p>
-            <p class="footer-text">Built with by Mohamed Al Najjar</p>
-            <a href="#hero" class="back-to-top" aria-label="Back to top">
-                <i class="fas fa-arrow-up"></i>
-            </a>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <aside class="hero-stack" aria-labelledby="stack-title">
+      <h2 id="stack-title">Core stack</h2>
+      <dl><div><dt>APIs</dt><dd>NestJS · Express.js</dd></div><div><dt>Data</dt><dd>PostgreSQL · MySQL · MongoDB</dd></div><div><dt>Processing</dt><dd>Redis · BullMQ</dd></div></dl>
+    </aside>
+  </div>
+</section>
+<section id="about" class="frame section about" aria-labelledby="about-title">
+  <div>
+    <h2 id="about-title">About me</h2>
+    <p class="lead">Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.</p>
+    <div class="education" id="education">
+      <h3>Education</h3>
+      <p><strong>Bachelor’s Degree in Software Engineering</strong></p><p>Al Azhar University, Gaza, Palestine | 2020–2026</p>
+      <details><summary>Certifications and training</summary><ul><li>Node.js Application Developer (2024)</li><li>Nest.js Application Developer (2024)</li><li>Understanding SDLC, System Requirements, Agile, Scrum and Jira (2025)</li><li>Docker Practical Course (2026)</li><li>GitLab CI/CD (2026)</li></ul></details>
+    </div>
+  </div>
+  <figure class="portrait"><img src="imgs/ME.jpg" alt="Portrait of Mohamed Al Najjar" width="2048" height="2050" loading="lazy"></figure>
+</section>
+<section class="tinted" id="experience" aria-labelledby="experience-title">
+  <div class="frame section">
+    <h2 id="experience-title">Project experience</h2>
+    <ol class="timeline"><li><time datetime="2026">2026</time><div><h3>Backend APIs and AI workflows</h3><p>Built project APIs for exam preparation, marketplace delivery, healthcare booking, and ad account integrations.</p><ul class="tags" aria-label="Technologies"><li>NestJS</li><li>Prisma</li><li>BullMQ</li><li>Gemini API</li><li>OAuth 2.0</li></ul></div></li><li><time datetime="2025">2025</time><div><h3>Booking, notifications and storefronts</h3><p>Developed property booking and checkout flows, a football match and notifications API, a blood bank API, and a Laravel storefront.</p><ul class="tags" aria-label="Technologies"><li>MySQL</li><li>Sequelize</li><li>Socket.IO</li><li>Stripe</li><li>Laravel</li></ul></div></li><li><time datetime="2024">2024</time><div><h3>Commerce and real-time services</h3><p>Built Express.js projects for e-commerce, wallet transactions, real-time chat, and movie data.</p><ul class="tags" aria-label="Technologies"><li>Express.js</li><li>MongoDB</li><li>Mongoose</li><li>MySQL</li><li>Socket.IO</li></ul></div></li></ol>
+  </div>
+</section>
+<section class="frame wide section" id="projects" aria-labelledby="projects-title">
+  <div class="section-head"><h2 id="projects-title">Projects</h2><a href="https://github.com/mohamedalnajjar10">GitHub profile</a></div>
+  <div class="filter-bar" hidden>
+    <div class="filter-buttons" role="group" aria-label="Filter projects">
+      <button type="button" data-filter="all" aria-pressed="true">All projects</button>
+      <button type="button" data-filter="AI &amp; Search" aria-pressed="false">AI &amp; Search</button><button type="button" data-filter="Commerce &amp; Payments" aria-pressed="false">Commerce &amp; Payments</button><button type="button" data-filter="APIs &amp; Integrations" aria-pressed="false">APIs &amp; Integrations</button>
+    </div>
+    <p class="project-count" role="status">12 projects</p>
+  </div>
+  <div class="project-grid"><article class="project-card" data-category="AI &amp; Search">
+  <a class="media-link" href="projects/full-ai-exam.html" aria-label="Project details for AI Exam Prep Assistant"><div class="project-media media-ai" data-image-slot="full-ai-exam">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/full-ai-exam.webp" alt="Screenshot of AI Exam Prep Assistant" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>AI &amp; Search</span><time datetime="2026">2026</time></p>
+    <h3>AI Exam Prep Assistant</h3>
+    <p>A Tawjihi exam-prep platform that uses curriculum content and past papers to generate practice questions and support a study chat.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>Gemini API</li><li>BullMQ</li><li>Redis</li><li>Next.js</li></ul>
+    <div class="card-links"><a href="projects/full-ai-exam.html">Project details<span class="sr-only"> for AI Exam Prep Assistant</span></a><a href="https://github.com/mohamedalnajjar10/Full-Ai-Exam">GitHub<span class="sr-only"> repository for AI Exam Prep Assistant</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="Commerce &amp; Payments">
+  <a class="media-link" href="projects/gaza-express-project.html" aria-label="Project details for Gaza Express"><div class="project-media media-commerce" data-image-slot="gaza-express-project">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/gaza-express-project.webp" alt="Screenshot of Gaza Express" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2026">2026</time></p>
+    <h3>Gaza Express</h3>
+    <p>A marketplace and delivery backend for store discovery, product catalogs, ordering, and order operations.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Redis</li><li>MinIO</li><li>Jest</li><li>Docker</li><li>GitHub Actions</li></ul>
+    <div class="card-links"><a href="projects/gaza-express-project.html">Project details<span class="sr-only"> for Gaza Express</span></a><a href="https://github.com/mohamedalnajjar10/Gaza-Express-Project">GitHub<span class="sr-only"> repository for Gaza Express</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/care-project.html" aria-label="Project details for Care Project"><div class="project-media media-api" data-image-slot="care-project">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/care-project.webp" alt="Screenshot of Care Project" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2026">2026</time></p>
+    <h3>Care Project</h3>
+    <p>A healthcare booking API for finding doctors, managing appointments, and processing payments.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Meilisearch</li><li>Socket.IO</li><li>Stripe</li><li>PayPal</li><li>Jest</li></ul>
+    <div class="card-links"><a href="projects/care-project.html">Project details<span class="sr-only"> for Care Project</span></a><a href="https://github.com/mohamedalnajjar10/Care-Project">GitHub<span class="sr-only"> repository for Care Project</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/unified-ad-campaign-manager.html" aria-label="Project details for Unified Ad Campaign Manager"><div class="project-media media-api" data-image-slot="unified-ad-campaign-manager">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/unified-ad-campaign-manager.webp" alt="Screenshot of Unified Ad Campaign Manager" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2026">2026</time></p>
+    <h3>Unified Ad Campaign Manager</h3>
+    <p>An ad-platform account integration backend with a shared OAuth provider interface and a Prisma campaign schema.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>OAuth 2.0</li><li>AES-256-GCM</li><li>Docker</li></ul>
+    <div class="card-links"><a href="projects/unified-ad-campaign-manager.html">Project details<span class="sr-only"> for Unified Ad Campaign Manager</span></a><a href="https://github.com/mohamedalnajjar10/Unified-Ad-Campaign-Manager">GitHub<span class="sr-only"> repository for Unified Ad Campaign Manager</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="Commerce &amp; Payments">
+  <a class="media-link" href="projects/airbnb.html" aria-label="Project details for Property Booking Marketplace"><div class="project-media media-commerce" data-image-slot="airbnb">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/airbnb.webp" alt="Screenshot of Property Booking Marketplace" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2025">2025</time></p>
+    <h3>Property Booking Marketplace</h3>
+    <p>An Airbnb-inspired API for listing properties and booking stays.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Stripe</li><li>PayPal</li><li>Jest</li></ul>
+    <div class="card-links"><a href="projects/airbnb.html">Project details<span class="sr-only"> for Property Booking Marketplace</span></a><a href="https://github.com/mohamedalnajjar10/Airbnb-">GitHub<span class="sr-only"> repository for Property Booking Marketplace</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="Commerce &amp; Payments">
+  <a class="media-link" href="projects/e-commerce.html" aria-label="Project details for E-Commerce Backend API"><div class="project-media media-commerce" data-image-slot="e-commerce">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/e-commerce.webp" alt="Screenshot of E-Commerce Backend API" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2024">2024</time></p>
+    <h3>E-Commerce Backend API</h3>
+    <p>An e-commerce REST API covering product discovery and the shopping-to-order flow.</p>
+    <ul class="tags" aria-label="Technologies"><li>Node.js</li><li>Express.js</li><li>JavaScript</li><li>MongoDB</li><li>Mongoose</li><li>JWT</li><li>Stripe</li></ul>
+    <div class="card-links"><a href="projects/e-commerce.html">Project details<span class="sr-only"> for E-Commerce Backend API</span></a><a href="https://github.com/mohamedalnajjar10/E-Commerce">GitHub<span class="sr-only"> repository for E-Commerce Backend API</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="Commerce &amp; Payments">
+  <a class="media-link" href="projects/wallet.html" aria-label="Project details for Digital Wallet API"><div class="project-media media-commerce" data-image-slot="wallet">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/wallet.webp" alt="Screenshot of Digital Wallet API" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2024">2024</time></p>
+    <h3>Digital Wallet API</h3>
+    <p>A digital wallet API for user transfers, top-ups through charging points, and company payments.</p>
+    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>MySQL</li><li>Sequelize</li><li>JWT</li><li>TOTP</li></ul>
+    <div class="card-links"><a href="projects/wallet.html">Project details<span class="sr-only"> for Digital Wallet API</span></a><a href="https://github.com/mohamedalnajjar10/Wallet">GitHub<span class="sr-only"> repository for Digital Wallet API</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/sport.html" aria-label="Project details for Football Match and Notifications API"><div class="project-media media-api" data-image-slot="sport">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/sport.webp" alt="Screenshot of Football Match and Notifications API" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2025">2025</time></p>
+    <h3>Football Match and Notifications API</h3>
+    <p>A football back end for match schedules and details, favorites, subscriptions, and live notifications.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>MySQL</li><li>Sequelize</li><li>Socket.IO</li><li>OpenAI API</li><li>Stripe</li><li>PayPal</li></ul>
+    <div class="card-links"><a href="projects/sport.html">Project details<span class="sr-only"> for Football Match and Notifications API</span></a><a href="https://github.com/mohamedalnajjar10/Sport-">GitHub<span class="sr-only"> repository for Football Match and Notifications API</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/blood-bank-system.html" aria-label="Project details for Blood Bank System"><div class="project-media media-api" data-image-slot="blood-bank-system">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/blood-bank-system.webp" alt="Screenshot of Blood Bank System" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2025">2025</time></p>
+    <h3>Blood Bank System</h3>
+    <p>A NestJS API for managing blood bank users, profiles, and medical history records.</p>
+    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Sequelize</li><li>JWT</li></ul>
+    <div class="card-links"><a href="projects/blood-bank-system.html">Project details<span class="sr-only"> for Blood Bank System</span></a><a href="https://github.com/mohamedalnajjar10/Blood-Bank-System">GitHub<span class="sr-only"> repository for Blood Bank System</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/real-time-chat.html" aria-label="Project details for Real-Time Chat"><div class="project-media media-api" data-image-slot="real-time-chat">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/real-time-chat.webp" alt="Screenshot of Real-Time Chat" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2024">2024</time></p>
+    <h3>Real-Time Chat</h3>
+    <p>A real-time messaging app with session-based sign-in and persistent conversation history.</p>
+    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>Socket.IO</li><li>MongoDB</li><li>Mongoose</li><li>EJS</li></ul>
+    <div class="card-links"><a href="projects/real-time-chat.html">Project details<span class="sr-only"> for Real-Time Chat</span></a><a href="https://github.com/mohamedalnajjar10/real-time-chat-">GitHub<span class="sr-only"> repository for Real-Time Chat</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="APIs &amp; Integrations">
+  <a class="media-link" href="projects/moveis-apis.html" aria-label="Project details for Movies API"><div class="project-media media-api" data-image-slot="moveis-apis">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/moveis-apis.webp" alt="Screenshot of Movies API" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2024">2024</time></p>
+    <h3>Movies API</h3>
+    <p>A movie REST API that combines TMDB data with user and review endpoints.</p>
+    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>MySQL</li><li>Sequelize</li><li>TMDB API</li></ul>
+    <div class="card-links"><a href="projects/moveis-apis.html">Project details<span class="sr-only"> for Movies API</span></a><a href="https://github.com/mohamedalnajjar10/Moveis-APIs">GitHub<span class="sr-only"> repository for Movies API</span></a></div>
+  </div>
+</article>
+<article class="project-card" data-category="Commerce &amp; Payments">
+  <a class="media-link" href="projects/store-laravel.html" aria-label="Project details for Laravel Storefront"><div class="project-media media-commerce" data-image-slot="store-laravel">
+    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
+    <template><img src="imgs/projects/store-laravel.webp" alt="Screenshot of Laravel Storefront" width="1200" height="675" loading="lazy"></template>
+  </div></a>
+  <div class="card-content">
+    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2025">2025</time></p>
+    <h3>Laravel Storefront</h3>
+    <p>A server-rendered Laravel storefront and product administration dashboard.</p>
+    <ul class="tags" aria-label="Technologies"><li>PHP</li><li>Laravel</li><li>Blade</li><li>Eloquent</li></ul>
+    <div class="card-links"><a href="projects/store-laravel.html">Project details<span class="sr-only"> for Laravel Storefront</span></a><a href="https://github.com/mohamedalnajjar10/Store-Laravel">GitHub<span class="sr-only"> repository for Laravel Storefront</span></a></div>
+  </div>
+</article></div>
+</section>
+<section id="skills" class="tinted" aria-labelledby="skills-title">
+  <div class="frame section"><h2 id="skills-title">Technical skills</h2>
+    <dl class="skills"><div><dt>Backend</dt><dd>Node.js, TypeScript, JavaScript, NestJS, Express.js, REST APIs, OpenAPI / Swagger, GraphQL</dd></div><div><dt>Databases</dt><dd>PostgreSQL, MySQL, MongoDB, Redis, Prisma ORM, Sequelize, Mongoose, Meilisearch</dd></div><div><dt>Async and Real-Time</dt><dd>BullMQ, background workers, transactional outbox, WebSockets, Socket.IO</dd></div><div><dt>Authentication and Security</dt><dd>JWT, OAuth 2.0, role-based access control (RBAC), TOTP, AES-256-GCM, rate limiting</dd></div><div><dt>Testing and Delivery</dt><dd>Jest, Supertest, unit and integration testing, Git, GitHub Actions, Docker, Docker Compose, S3-compatible storage</dd></div><div><dt>AI and Search</dt><dd>Google Gemini API, retrieval-augmented generation (RAG), embeddings, semantic search, PostgreSQL full-text search, OCR</dd></div></dl>
+  </div>
+</section>
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="frame section contact-layout">
+    <div><h2 id="contact-title">Get in touch</h2><p>For backend engineering roles and project inquiries.</p></div>
+    <div class="link-row"><a class="button primary" href="mailto:mohamedalnajjar1000@gmail.com">Email Mohamed</a><a class="button outline" href="https://www.linkedin.com/in/mohamedalnajjar10/">LinkedIn</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="frame footer-layout">
+    <span>Mohamed Al Najjar</span>
+    <div class="link-row">
+      <a href="https://github.com/mohamedalnajjar10">GitHub</a>
+      <a href="https://www.linkedin.com/in/mohamedalnajjar10/">LinkedIn</a>
+      <a href="mailto:mohamedalnajjar1000@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
