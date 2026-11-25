@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" data-palette="nile-silt" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js.">
+<meta name="theme-color" content="#0d0c0b">
+<title>About me | Mohamed Al Najjar</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC3UlEQVR4nO2aX0hTURzHv/ut2uYWWWZRZmZUsGaJ4Ev5hyRChXooCKmn/keIvRW99tZLLxUS2BqFRBREQUStoWuUlumDGoE666k0HdHKue1ubXHPvNe5P1dltu1YHxjnd8+fy+97vuecO3anggKrtxwPIwtwOS2qZG2qbE58LkJUPCSuJIR4Sz42V1kArxBvsy8h5cy9AyoeZz8a7h0gcA6BcwicQ+AcAucQ/jUBj1svYnzoNvuYr52b0Xb5UoPcNtR9Xa7ve31Vru+yXQHRzC+VZ4/tk9tLjBv/rgB9jlaOq3dvh1o9fYuaqhI5Nhh0CccXF63B/tpyLBQ03wEGw7SA3BV6lO0oZvG6tSth3FYgty1REzSapQnvcf5MPTInQB8RMDbunjHrUvll5Htc31hKSzYx9zIq4NHTd6ysqTSxcm91RMCd+/a4vhLDn0cR/B1icdMCuUDzHZCj07CyzdGPXxNelJVuZnWVu4z4Nu5Gm+NDUgGiO8+sPSzeU2HCTlNRegWIiUoniMcroKNrgK31o4ersCrXAJu9D16vP+F+kWg2v5DjptP16RUQnZAgBPDqzUcWN56sZeVLey98/oDiHujp/YS33YMsPlBXjqLC/DQKiErI7w/A0RERsGF9HoRAkAmaTYDIjZbnrFSrCY2n6pAZAUIQA86vGB37wa473w9iwuODzyck7B+Ntb0Xg8MjLD5yqIIdxxlxQERyQVz/InNxIBwOo9kccUGrXYaGgxVIiwB9TuQEkhwQabxwC/lbT+CmxcquBSGIUCisKEDk4ZNO+VlSWJCXrk2si3MgEeIGj+0f3yeIlrs2pEoKeyC5AO+UOCUHRCz32uGZnD520yZAXMPiDCZD2sjLEzwHonH/nETrAwdS4f/PKpmGwDkEziFwDoFzCJxD4BwC5xA4h8A5pPQSOdtxOS0q/h3ALK/ysxXXVM6LwwHeXHBF5bq4/uyBGLJFiNLq+ANq0weTxuBVBQAAAABJRU5ErkJggg==">
+<script>
+(() => {
+  const p = localStorage.getItem("portfolio-palette");
+  const t = localStorage.getItem("portfolio-theme");
+  const valid = new Set(["nile-silt", "deep-moss", "basalt", "nocturne"]);
+  document.documentElement.dataset.palette = valid.has(p) ? p : "nile-silt";
+  document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+})();
+</script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body class="subpage-body">
+<header class="subpage-topbar">
+  <div class="subpage-topbar__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">← Mohamed Al Najjar</a>
+      <span aria-hidden="true">/</span>
+      <span>About me</span>
+    </nav>
+
+    <aside class="utility-dock utility-dock--inline" aria-label="Theme and palette controls">
+      <button type="button" class="dock-morph-btn" data-palette-toggle aria-haspopup="true" aria-expanded="false" aria-label="Change color palette">
+        <span class="dock-swatch" aria-hidden="true"></span>
+        <span class="dock-morph-tip">palette</span>
+      </button>
+      <button type="button" class="dock-morph-btn" data-theme-toggle aria-label="Switch to light mode">
+        <svg class="dock-icon" data-icon-sun viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="dock-icon" data-icon-moon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="dock-morph-tip">light</span>
+      </button>
+    </aside>
+  </div>
+</header>
+
+<div class="palette-popover palette-popover--inline" data-palette-popover role="menu" aria-label="Color palettes" hidden>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="true" data-palette-option="nile-silt">
+    <span class="palette-dot" style="background:#d4a35924;border:1px solid #d4a3598c"><i style="background:#d4a359"></i></span>
+    <span>Nile Silt</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="deep-moss">
+    <span class="palette-dot" style="background:#cbb89424;border:1px solid #cbb8948c"><i style="background:#cbb894"></i></span>
+    <span>Deep Moss</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="basalt">
+    <span class="palette-dot" style="background:#e07a5f26;border:1px solid #e07a5f8c"><i style="background:#e07a5f"></i></span>
+    <span>Basalt</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="nocturne">
+    <span class="palette-dot" style="background:#8fb89f26;border:1px solid #8fb89f8c"><i style="background:#8fb89f"></i></span>
+    <span>Nocturne</span>
+  </button>
+</div>
+
+<main class="subpage-article">
+  <header class="subpage-head">
+    <img class="id-avatar" src="imgs/ME.jpg" alt="Portrait of Mohamed Al Najjar" width="2048" height="2050">
+    <div>
+      <h1>About me</h1>
+      <div class="subpage-meta">
+        <span class="chip">Egypt</span>
+        <span class="chip">Node.js Backend Developer</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="subpage-jump" aria-label="Sections">
+    <span class="subpage-jump__label">Sections</span>
+    <a class="pill-link" href="#core-stack">Core stack</a>
+    <a class="pill-link" href="#education">Education</a>
+    <a class="pill-link" href="#certifications">Certifications and training</a>
+    <a class="pill-link" href="#contact">Get in touch</a>
+  </nav>
+
+  <p class="subpage-lead">I build backend APIs, third-party integrations, and data workflows with Node.js and TypeScript.</p>
+  <p class="subpage-prose" style="margin-top:0.85rem;">Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.</p>
+
+  <section id="core-stack" class="subpage-section">
+    <h2>Core stack</h2>
+    <div class="subpage-card">
+      <div class="stat-strip" style="border:0;">
+        <div class="stat-cell">APIs: <strong>NestJS · Express.js</strong></div>
+        <div class="stat-cell">Data: <strong>PostgreSQL · MySQL · MongoDB</strong></div>
+        <div class="stat-cell">Processing: <strong>Redis · BullMQ</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="subpage-section">
+    <h2>Education</h2>
+    <div class="subpage-card">
+      <div class="inspector-head">
+        <div>
+          <p class="bio-primary" style="margin-top:0;">Bachelor’s Degree in Software Engineering</p>
+          <p class="inspector-sub">Al Azhar University, Gaza, Palestine | 2020–2026</p>
+        </div>
+        <span class="date-pill">2020–2026</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="subpage-section">
+    <h2>Certifications and training</h2>
+    <div class="subpage-card">
+      <ul class="impact-list">
+        <li>Node.js Application Developer (2024)</li>
+        <li>Nest.js Application Developer (2024)</li>
+        <li>Understanding SDLC, System Requirements, Agile, Scrum and Jira (2025)</li>
+        <li>Docker Practical Course (2026)</li>
+        <li>GitLab CI/CD (2026)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="subpage-section">
+    <h2>Get in touch</h2>
+    <p class="subpage-prose">For backend engineering roles and project inquiries.</p>
+    <div class="subpage-actions">
+      <a class="cta-btn cta-btn--accent" href="mailto:mohamedalnajjar1000@gmail.com">Email Mohamed</a>
+      <a class="cta-btn" href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="cta-btn" href="https://github.com/mohamedalnajjar10" target="_blank" rel="noopener">GitHub</a>
+      <a class="cta-btn" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" download>Download CV</a>
+      <a class="cta-btn" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" target="_blank" rel="noopener">View CV</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

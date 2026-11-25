@@ -1,253 +1,897 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="nile-silt" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.">
-<meta name="theme-color" content="#142461">
+<meta name="theme-color" content="#0d0c0b">
 <title>Mohamed Al Najjar | Node.js Backend Developer</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC3UlEQVR4nO2aX0hTURzHv/ut2uYWWWZRZmZUsGaJ4Ev5hyRChXooCKmn/keIvRW99tZLLxUS2BqFRBREQUStoWuUlumDGoE666k0HdHKue1ubXHPvNe5P1dltu1YHxjnd8+fy+97vuecO3anggKrtxwPIwtwOS2qZG2qbE58LkJUPCSuJIR4Sz42V1kArxBvsy8h5cy9AyoeZz8a7h0gcA6BcwicQ+AcAucQ/jUBj1svYnzoNvuYr52b0Xb5UoPcNtR9Xa7ve31Vru+yXQHRzC+VZ4/tk9tLjBv/rgB9jlaOq3dvh1o9fYuaqhI5Nhh0CccXF63B/tpyLBQ03wEGw7SA3BV6lO0oZvG6tSth3FYgty1REzSapQnvcf5MPTInQB8RMDbunjHrUvll5Htc31hKSzYx9zIq4NHTd6ysqTSxcm91RMCd+/a4vhLDn0cR/B1icdMCuUDzHZCj07CyzdGPXxNelJVuZnWVu4z4Nu5Gm+NDUgGiO8+sPSzeU2HCTlNRegWIiUoniMcroKNrgK31o4ersCrXAJu9D16vP+F+kWg2v5DjptP16RUQnZAgBPDqzUcWN56sZeVLey98/oDiHujp/YS33YMsPlBXjqLC/DQKiErI7w/A0RERsGF9HoRAkAmaTYDIjZbnrFSrCY2n6pAZAUIQA86vGB37wa473w9iwuODzyck7B+Ntb0Xg8MjLD5yqIIdxxlxQERyQVz/InNxIBwOo9kccUGrXYaGgxVIiwB9TuQEkhwQabxwC/lbT+CmxcquBSGIUCisKEDk4ZNO+VlSWJCXrk2si3MgEeIGj+0f3yeIlrs2pEoKeyC5AO+UOCUHRCz32uGZnD520yZAXMPiDCZD2sjLEzwHonH/nETrAwdS4f/PKpmGwDkEziFwDoFzCJxD4BwC5xA4h8A5pPQSOdtxOS0q/h3ALK/ysxXXVM6LwwHeXHBF5bq4/uyBGLJFiNLq+ANq0weTxuBVBQAAAABJRU5ErkJggg==">
+<script>
+(() => {
+  const p = localStorage.getItem("portfolio-palette");
+  const t = localStorage.getItem("portfolio-theme");
+  const valid = new Set(["nile-silt", "deep-moss", "basalt", "nocturne"]);
+  document.documentElement.dataset.palette = valid.has(p) ? p : "nile-silt";
+  document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+})();
+</script>
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 </head>
 <body id="top">
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="frame nav-layout">
-    <a class="brand" href="index.html#top"><span aria-hidden="true">MN</span> Mohamed Al Najjar</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html#about">About</a>
-      <a href="index.html#experience">Experience</a>
-      <a href="index.html#projects">Projects</a>
-    </nav>
-    <a class="button compact primary" href="index.html#contact">Contact</a>
-  </div>
-</header>
-<main id="main">
-<section class="intro-panel" aria-labelledby="name">
-  <div class="frame intro-layout">
-    <div>
-      <p class="location">Egypt</p>
-      <h1 id="name">Mohamed Al Najjar<span>.</span></h1>
-      <p class="role">Node.js Backend Developer</p>
-      <p class="intro-copy">I build backend APIs, third-party integrations, and data workflows with Node.js and TypeScript.</p>
-      <div class="link-row hero-actions">
-        <a class="button primary" href="#projects">Explore projects</a>
-        <a class="button outline" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" download>Download CV</a>
-        <a class="text-action" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" target="_blank" rel="noopener">View CV<span class="sr-only"> (opens in a new tab)</span></a>
-      </div>
+<canvas id="pixel-landscape-canvas" class="pixel-landscape-canvas" aria-hidden="true"></canvas>
+
+<aside class="utility-dock" aria-label="Theme and view controls" data-enter-sky>
+  <button type="button" class="dock-morph-btn" data-palette-toggle aria-haspopup="true" aria-expanded="false" aria-label="Change color palette">
+    <span class="dock-swatch" aria-hidden="true"></span>
+    <span class="dock-morph-tip">palette</span>
+  </button>
+
+  <button type="button" class="dock-morph-btn" data-theme-toggle aria-label="Switch to light mode">
+    <svg class="dock-icon" data-icon-sun viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+    </svg>
+    <svg class="dock-icon" data-icon-moon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden>
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+    <span class="dock-morph-tip">light</span>
+  </button>
+
+  <a class="dock-morph-btn" href="about.html" aria-label="About me">
+    <span class="dock-link-text" aria-hidden="true">?</span>
+    <span class="dock-morph-tip">About me</span>
+  </a>
+</aside>
+
+<div class="palette-popover" data-palette-popover role="menu" aria-label="Color palettes" hidden>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="true" data-palette-option="nile-silt">
+    <span class="palette-dot" style="background:#d4a35924;border:1px solid #d4a3598c"><i style="background:#d4a359"></i></span>
+    <span>Nile Silt</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="deep-moss">
+    <span class="palette-dot" style="background:#cbb89424;border:1px solid #cbb8948c"><i style="background:#cbb894"></i></span>
+    <span>Deep Moss</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="basalt">
+    <span class="palette-dot" style="background:#e07a5f26;border:1px solid #e07a5f8c"><i style="background:#e07a5f"></i></span>
+    <span>Basalt</span>
+  </button>
+  <button type="button" class="palette-option" role="menuitemradio" aria-checked="false" data-palette-option="nocturne">
+    <span class="palette-dot" style="background:#8fb89f26;border:1px solid #8fb89f8c"><i style="background:#8fb89f"></i></span>
+    <span>Nocturne</span>
+  </button>
+</div>
+
+<div class="viewport-shell is-world-entering">
+  <main class="stage-main">
+    <div class="two-zone">
+
+      <!-- Left Zone: Identity & Actions -->
+      <section class="identity-col" aria-labelledby="name" data-enter-sky>
+        <div class="id-head">
+          <img class="id-avatar" src="imgs/ME.jpg" alt="Portrait of Mohamed Al Najjar" width="2048" height="2050">
+          <div class="id-titles">
+            <h1 class="id-name" id="name">Mohamed Al Najjar</h1>
+            <p class="id-role">
+              <span>Node.js Backend Developer</span>
+              <span aria-hidden="true">·</span>
+              <span>Egypt</span>
+              <span aria-hidden="true">·</span>
+              <a class="id-about-link" href="about.html">About me</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="bio-primary">I build backend APIs, third-party integrations, and data workflows with Node.js and TypeScript.</p>
+        <p class="bio-secondary">Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.</p>
+
+        <div class="cta-row">
+          <a class="cta-btn cta-btn--accent" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" download>Download CV ↗</a>
+          <button type="button" class="cta-btn" data-copy-email="mohamedalnajjar1000@gmail.com">Copy email</button>
+        </div>
+
+        <nav class="icon-row" aria-label="Direct links">
+          <a class="morph-btn morph-btn--accent" href="Mohamed_Al_Najjar_Nodejs_Backend_CV.pdf" target="_blank" rel="noopener" aria-label="View CV (opens in a new tab)">
+            <svg class="morph-svg" viewBox="0 0 106 70" aria-hidden="true"><path class="morph-path"></path></svg>
+            <svg class="morph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span class="morph-tip">View CV</span>
+          </a>
+
+          <a class="morph-btn" href="mailto:mohamedalnajjar1000@gmail.com" aria-label="Email Mohamed">
+            <svg class="morph-svg" viewBox="0 0 106 70" aria-hidden="true"><path class="morph-path"></path></svg>
+            <svg class="morph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span class="morph-tip">Email Mohamed</span>
+          </a>
+
+          <a class="morph-btn" href="https://github.com/mohamedalnajjar10" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <svg class="morph-svg" viewBox="0 0 106 70" aria-hidden="true"><path class="morph-path"></path></svg>
+            <svg class="morph-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.02 11.02 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"></path>
+            </svg>
+            <span class="morph-tip">GitHub</span>
+          </a>
+
+          <a class="morph-btn" href="https://www.linkedin.com/in/mohamedalnajjar10/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg class="morph-svg" viewBox="0 0 106 70" aria-hidden="true"><path class="morph-path"></path></svg>
+            <svg class="morph-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+            </svg>
+            <span class="morph-tip">LinkedIn</span>
+          </a>
+        </nav>
+      </section>
+
+      <!-- Right Zone: Tabbed Portfolio Panel -->
+      <section class="panel-col" aria-label="Portfolio details" data-enter-sea>
+        <div class="tabs-bar" role="tablist" aria-label="Portfolio sections">
+          <div class="tab-bridge" aria-hidden="true"></div>
+          <button type="button" class="tab-btn" role="tab" id="tab-experience" aria-selected="true" aria-controls="panel-experience" data-tab-target="experience">
+            <span>Experience</span><span class="tab-count">03</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" id="tab-projects" aria-selected="false" aria-controls="panel-projects" tabindex="-1" data-tab-target="projects">
+            <span>Projects</span><span class="tab-count">12</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" id="tab-stack" aria-selected="false" aria-controls="panel-stack" tabindex="-1" data-tab-target="stack">
+            <span>Stack</span>
+          </button>
+          <button type="button" class="tab-btn" role="tab" id="tab-education" aria-selected="false" aria-controls="panel-education" tabindex="-1" data-tab-target="education">
+            <span>Education</span>
+          </button>
+        </div>
+
+        <div class="panel-box">
+
+          <!-- TAB 1: Project Experience -->
+          <div class="tab-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" data-tab-panel="experience">
+            <div class="master-detail" data-master-detail="experience">
+              <div class="drum-column">
+                <div class="drum-rail drum-rail--centered" role="listbox" aria-label="Project experience">
+                  <button type="button" class="drum-item" role="option" aria-selected="true" data-item-id="exp-2026">
+                    <span class="drum-num">01</span>
+                    <span class="drum-text">
+                      <span class="drum-title">Backend APIs and AI workflows</span>
+                      <span class="drum-sub">2026</span>
+                    </span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="exp-2025">
+                    <span class="drum-num">02</span>
+                    <span class="drum-text">
+                      <span class="drum-title">Booking, notifications and storefronts</span>
+                      <span class="drum-sub">2025</span>
+                    </span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="exp-2024">
+                    <span class="drum-num">03</span>
+                    <span class="drum-text">
+                      <span class="drum-title">Commerce and real-time services</span>
+                      <span class="drum-sub">2024</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="inspector-pane">
+                <!-- 2026 -->
+                <div data-detail-id="exp-2026" style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Backend APIs and AI workflows</h2>
+                        <p class="inspector-sub">Project experience</p>
+                      </div>
+                      <span class="date-pill">2026</span>
+                    </div>
+
+                    <div class="stat-strip">
+                      <div class="stat-cell">APIs: <strong>NestJS · Express.js</strong></div>
+                      <div class="stat-cell">Data: <strong>PostgreSQL · MySQL · MongoDB</strong></div>
+                      <div class="stat-cell">Processing: <strong>Redis · BullMQ</strong></div>
+                    </div>
+
+                    <ul class="impact-list">
+                      <li>Built project APIs for exam preparation, marketplace delivery, healthcare booking, and ad account integrations.</li>
+                    </ul>
+
+                    <div class="exp-projects-strip">
+                      <span class="exp-projects-label">Projects:</span>
+                      <button type="button" class="pill-link" data-jump-project="full-ai-exam">AI Exam Prep Assistant</button>
+                      <button type="button" class="pill-link" data-jump-project="gaza-express-project">Gaza Express</button>
+                      <button type="button" class="pill-link" data-jump-project="care-project">Care Project</button>
+                      <button type="button" class="pill-link" data-jump-project="unified-ad-campaign-manager">Unified Ad Campaign Manager</button>
+                    </div>
+                  </div>
+
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip">NestJS</span>
+                      <span class="chip">Prisma</span>
+                      <span class="chip">BullMQ</span>
+                      <span class="chip">Gemini API</span>
+                      <span class="chip">OAuth 2.0</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 2025 -->
+                <div data-detail-id="exp-2025" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Booking, notifications and storefronts</h2>
+                        <p class="inspector-sub">Project experience</p>
+                      </div>
+                      <span class="date-pill">2025</span>
+                    </div>
+
+                    <div class="stat-strip">
+                      <div class="stat-cell">APIs: <strong>NestJS · Express.js</strong></div>
+                      <div class="stat-cell">Data: <strong>PostgreSQL · MySQL · MongoDB</strong></div>
+                      <div class="stat-cell">Processing: <strong>Redis · BullMQ</strong></div>
+                    </div>
+
+                    <ul class="impact-list">
+                      <li>Developed property booking and checkout flows, a football match and notifications API, a blood bank API, and a Laravel storefront.</li>
+                    </ul>
+
+                    <div class="exp-projects-strip">
+                      <span class="exp-projects-label">Projects:</span>
+                      <button type="button" class="pill-link" data-jump-project="airbnb">Property Booking Marketplace</button>
+                      <button type="button" class="pill-link" data-jump-project="sport">Football Match and Notifications API</button>
+                      <button type="button" class="pill-link" data-jump-project="blood-bank-system">Blood Bank System</button>
+                      <button type="button" class="pill-link" data-jump-project="store-laravel">Laravel Storefront</button>
+                    </div>
+                  </div>
+
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip">MySQL</span>
+                      <span class="chip">Sequelize</span>
+                      <span class="chip">Socket.IO</span>
+                      <span class="chip">Stripe</span>
+                      <span class="chip">Laravel</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 2024 -->
+                <div data-detail-id="exp-2024" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Commerce and real-time services</h2>
+                        <p class="inspector-sub">Project experience</p>
+                      </div>
+                      <span class="date-pill">2024</span>
+                    </div>
+
+                    <div class="stat-strip">
+                      <div class="stat-cell">APIs: <strong>NestJS · Express.js</strong></div>
+                      <div class="stat-cell">Data: <strong>PostgreSQL · MySQL · MongoDB</strong></div>
+                      <div class="stat-cell">Processing: <strong>Redis · BullMQ</strong></div>
+                    </div>
+
+                    <ul class="impact-list">
+                      <li>Built Express.js projects for e-commerce, wallet transactions, real-time chat, and movie data.</li>
+                    </ul>
+
+                    <div class="exp-projects-strip">
+                      <span class="exp-projects-label">Projects:</span>
+                      <button type="button" class="pill-link" data-jump-project="e-commerce">E-Commerce Backend API</button>
+                      <button type="button" class="pill-link" data-jump-project="wallet">Digital Wallet API</button>
+                      <button type="button" class="pill-link" data-jump-project="real-time-chat">Real-Time Chat</button>
+                      <button type="button" class="pill-link" data-jump-project="moveis-apis">Movies API</button>
+                    </div>
+                  </div>
+
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip">Express.js</span>
+                      <span class="chip">MongoDB</span>
+                      <span class="chip">Mongoose</span>
+                      <span class="chip">MySQL</span>
+                      <span class="chip">Socket.IO</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: Projects (All 12 projects verbatim) -->
+          <div class="tab-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" data-tab-panel="projects" hidden>
+            <div class="master-detail" data-master-detail="projects">
+              <div class="drum-column">
+                <div class="drum-filter-bar" role="group" aria-label="Filter projects">
+                  <button type="button" class="drum-filter-btn" data-category-filter="all" aria-pressed="true">All projects</button>
+                  <button type="button" class="drum-filter-btn" data-category-filter="AI &amp; Search" aria-pressed="false">AI &amp; Search</button>
+                  <button type="button" class="drum-filter-btn" data-category-filter="Commerce &amp; Payments" aria-pressed="false">Commerce &amp; Payments</button>
+                  <button type="button" class="drum-filter-btn" data-category-filter="APIs &amp; Integrations" aria-pressed="false">APIs &amp; Integrations</button>
+                </div>
+
+                <div class="drum-rail" role="listbox" aria-label="Projects">
+                  <button type="button" class="drum-item" role="option" aria-selected="true" data-item-id="full-ai-exam" data-category="AI &amp; Search">
+                    <span class="drum-num">01</span>
+                    <span class="drum-text"><span class="drum-title">AI Exam Prep Assistant</span><span class="drum-sub">AI &amp; Search · 2026</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="gaza-express-project" data-category="Commerce &amp; Payments">
+                    <span class="drum-num">02</span>
+                    <span class="drum-text"><span class="drum-title">Gaza Express</span><span class="drum-sub">Commerce &amp; Payments · 2026</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="care-project" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">03</span>
+                    <span class="drum-text"><span class="drum-title">Care Project</span><span class="drum-sub">APIs &amp; Integrations · 2026</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="unified-ad-campaign-manager" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">04</span>
+                    <span class="drum-text"><span class="drum-title">Unified Ad Campaign Manager</span><span class="drum-sub">APIs &amp; Integrations · 2026</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="airbnb" data-category="Commerce &amp; Payments">
+                    <span class="drum-num">05</span>
+                    <span class="drum-text"><span class="drum-title">Property Booking Marketplace</span><span class="drum-sub">Commerce &amp; Payments · 2025</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="e-commerce" data-category="Commerce &amp; Payments">
+                    <span class="drum-num">06</span>
+                    <span class="drum-text"><span class="drum-title">E-Commerce Backend API</span><span class="drum-sub">Commerce &amp; Payments · 2024</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="wallet" data-category="Commerce &amp; Payments">
+                    <span class="drum-num">07</span>
+                    <span class="drum-text"><span class="drum-title">Digital Wallet API</span><span class="drum-sub">Commerce &amp; Payments · 2024</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="sport" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">08</span>
+                    <span class="drum-text"><span class="drum-title">Football Match and Notifications API</span><span class="drum-sub">APIs &amp; Integrations · 2025</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="blood-bank-system" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">09</span>
+                    <span class="drum-text"><span class="drum-title">Blood Bank System</span><span class="drum-sub">APIs &amp; Integrations · 2025</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="real-time-chat" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">10</span>
+                    <span class="drum-text"><span class="drum-title">Real-Time Chat</span><span class="drum-sub">APIs &amp; Integrations · 2024</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="moveis-apis" data-category="APIs &amp; Integrations">
+                    <span class="drum-num">11</span>
+                    <span class="drum-text"><span class="drum-title">Movies API</span><span class="drum-sub">APIs &amp; Integrations · 2024</span></span>
+                  </button>
+                  <button type="button" class="drum-item" role="option" aria-selected="false" tabindex="-1" data-item-id="store-laravel" data-category="Commerce &amp; Payments">
+                    <span class="drum-num">12</span>
+                    <span class="drum-text"><span class="drum-title">Laravel Storefront</span><span class="drum-sub">Commerce &amp; Payments · 2025</span></span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="inspector-pane">
+                <!-- 01: AI Exam Prep Assistant -->
+                <div data-detail-id="full-ai-exam" style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">AI Exam Prep Assistant</h2><span class="inspector-year">2026</span>
+                        <p class="inspector-sub">AI &amp; Search</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Full-Ai-Exam" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/full-ai-exam.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A Tawjihi exam-prep platform that uses curriculum content and past papers to generate practice questions and support a study chat.</p>
+                    <ul class="impact-list">
+                      <li>Built PDF and image ingestion with OCR, question staging, Bloom’s taxonomy tagging, and hybrid search that combines PostgreSQL full-text search with embedding similarity.</li>
+                      <li>Implemented retrieval-augmented generation (RAG), Gemini integration, Redis-backed BullMQ workers, and authentication with JWT, Google OAuth, and TOTP.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="postgresql">PostgreSQL</span>
+                      <span class="chip chip--tech" data-tech="prisma">Prisma</span>
+                      <span class="chip chip--tech" data-tech="gemini api">Gemini API</span>
+                      <span class="chip chip--tech" data-tech="bullmq">BullMQ</span>
+                      <span class="chip chip--tech" data-tech="redis">Redis</span>
+                      <span class="chip chip--tech" data-tech="next.js">Next.js</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 02: Gaza Express -->
+                <div data-detail-id="gaza-express-project" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Gaza Express</h2><span class="inspector-year">2026</span>
+                        <p class="inspector-sub">Commerce &amp; Payments</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Gaza-Express-Project" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/gaza-express-project.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A marketplace and delivery backend for store discovery, product catalogs, ordering, and order operations.</p>
+                    <ul class="impact-list">
+                      <li>Developed REST APIs for stores, catalog, orders, reviews, favorites, and finance workflows with Prisma and MySQL.</li>
+                      <li>Implemented JWT and refresh-token flows, SMS one-time passwords via an outbox worker, and S3-compatible image storage. Added Jest tests and GitHub Actions CI.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="prisma">Prisma</span>
+                      <span class="chip chip--tech" data-tech="redis">Redis</span>
+                      <span class="chip chip--tech" data-tech="minio">MinIO</span>
+                      <span class="chip chip--tech" data-tech="jest">Jest</span>
+                      <span class="chip chip--tech" data-tech="docker">Docker</span>
+                      <span class="chip chip--tech" data-tech="github actions">GitHub Actions</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 03: Care Project -->
+                <div data-detail-id="care-project" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Care Project</h2><span class="inspector-year">2026</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Care-Project" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/care-project.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A healthcare booking API for finding doctors, managing appointments, and processing payments.</p>
+                    <ul class="impact-list">
+                      <li>Modeled doctors, specialties, appointments, addresses, and reviews with Prisma and MySQL. Indexed searchable healthcare records with Meilisearch.</li>
+                      <li>Added Stripe and PayPal payment strategies, Socket.IO notifications, and Jest tests for authentication and appointment workflows.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="prisma">Prisma</span>
+                      <span class="chip chip--tech" data-tech="meilisearch">Meilisearch</span>
+                      <span class="chip chip--tech" data-tech="socket.io">Socket.IO</span>
+                      <span class="chip chip--tech" data-tech="stripe">Stripe</span>
+                      <span class="chip chip--tech" data-tech="paypal">PayPal</span>
+                      <span class="chip chip--tech" data-tech="jest">Jest</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 04: Unified Ad Campaign Manager -->
+                <div data-detail-id="unified-ad-campaign-manager" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Unified Ad Campaign Manager</h2><span class="inspector-year">2026</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Unified-Ad-Campaign-Manager" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/unified-ad-campaign-manager.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">An ad-platform account integration backend with a shared OAuth provider interface and a Prisma campaign schema.</p>
+                    <ul class="impact-list">
+                      <li>Implemented OAuth provider strategies for Meta, Google Ads, LinkedIn, X, Snapchat, and TikTok.</li>
+                      <li>Built account linking and token refresh flows, stored access and refresh tokens with AES-256-GCM encryption, and modeled ad accounts and campaigns in Prisma.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="prisma">Prisma</span>
+                      <span class="chip chip--tech" data-tech="oauth 2.0">OAuth 2.0</span>
+                      <span class="chip chip--tech" data-tech="aes-256-gcm">AES-256-GCM</span>
+                      <span class="chip chip--tech" data-tech="docker">Docker</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 05: Property Booking Marketplace -->
+                <div data-detail-id="airbnb" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Property Booking Marketplace</h2><span class="inspector-year">2025</span>
+                        <p class="inspector-sub">Commerce &amp; Payments</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Airbnb-" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/airbnb.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">An Airbnb-inspired API for listing properties and booking stays.</p>
+                    <ul class="impact-list">
+                      <li>Built listing and booking APIs, availability checks, and Stripe and PayPal checkout and webhook flows.</li>
+                      <li>Added Jest tests for authentication, listings, and bookings.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="prisma">Prisma</span>
+                      <span class="chip chip--tech" data-tech="stripe">Stripe</span>
+                      <span class="chip chip--tech" data-tech="paypal">PayPal</span>
+                      <span class="chip chip--tech" data-tech="jest">Jest</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 06: E-Commerce Backend API -->
+                <div data-detail-id="e-commerce" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">E-Commerce Backend API</h2><span class="inspector-year">2024</span>
+                        <p class="inspector-sub">Commerce &amp; Payments</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/E-Commerce" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/e-commerce.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">An e-commerce REST API covering product discovery and the shopping-to-order flow.</p>
+                    <ul class="impact-list">
+                      <li>Built endpoints for products, categories, reviews, wish lists, coupons, carts, and orders.</li>
+                      <li>Implemented JWT authentication, role-based access, and Stripe checkout.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="node.js">Node.js</span>
+                      <span class="chip chip--tech" data-tech="express.js">Express.js</span>
+                      <span class="chip chip--tech" data-tech="javascript">JavaScript</span>
+                      <span class="chip chip--tech" data-tech="mongodb">MongoDB</span>
+                      <span class="chip chip--tech" data-tech="mongoose">Mongoose</span>
+                      <span class="chip chip--tech" data-tech="jwt">JWT</span>
+                      <span class="chip chip--tech" data-tech="stripe">Stripe</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 07: Digital Wallet API -->
+                <div data-detail-id="wallet" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Digital Wallet API</h2><span class="inspector-year">2024</span>
+                        <p class="inspector-sub">Commerce &amp; Payments</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Wallet" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/wallet.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A digital wallet API for user transfers, top-ups through charging points, and company payments.</p>
+                    <ul class="impact-list">
+                      <li>Implemented user and company wallet workflows and transaction tracking with Sequelize and MySQL.</li>
+                      <li>Added role-based access control, JWT authentication, and TOTP two-factor authentication.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="express.js">Express.js</span>
+                      <span class="chip chip--tech" data-tech="javascript">JavaScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="sequelize">Sequelize</span>
+                      <span class="chip chip--tech" data-tech="jwt">JWT</span>
+                      <span class="chip chip--tech" data-tech="totp">TOTP</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 08: Football Match and Notifications API -->
+                <div data-detail-id="sport" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Football Match and Notifications API</h2><span class="inspector-year">2025</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Sport-" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/sport.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A football back end for match schedules and details, favorites, subscriptions, and live notifications.</p>
+                    <ul class="impact-list">
+                      <li>Built match lookup endpoints by date and competition, plus a Socket.IO notifications gateway.</li>
+                      <li>Added subscription payments and an OpenAI integration.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="sequelize">Sequelize</span>
+                      <span class="chip chip--tech" data-tech="socket.io">Socket.IO</span>
+                      <span class="chip chip--tech" data-tech="openai api">OpenAI API</span>
+                      <span class="chip chip--tech" data-tech="stripe">Stripe</span>
+                      <span class="chip chip--tech" data-tech="paypal">PayPal</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 09: Blood Bank System -->
+                <div data-detail-id="blood-bank-system" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Blood Bank System</h2><span class="inspector-year">2025</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Blood-Bank-System" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/blood-bank-system.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A NestJS API for managing blood bank users, profiles, and medical history records.</p>
+                    <ul class="impact-list">
+                      <li>Modeled user profiles and medical histories with MySQL and Sequelize.</li>
+                      <li>Implemented JWT authentication and role guards for protected endpoints.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="nestjs">NestJS</span>
+                      <span class="chip chip--tech" data-tech="typescript">TypeScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="sequelize">Sequelize</span>
+                      <span class="chip chip--tech" data-tech="jwt">JWT</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 10: Real-Time Chat -->
+                <div data-detail-id="real-time-chat" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Real-Time Chat</h2><span class="inspector-year">2024</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/real-time-chat-" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/real-time-chat.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A real-time messaging app with session-based sign-in and persistent conversation history.</p>
+                    <ul class="impact-list">
+                      <li>Used Socket.IO to send and delete messages and load existing conversations.</li>
+                      <li>Persisted chat records with MongoDB and Mongoose and rendered views with EJS.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="express.js">Express.js</span>
+                      <span class="chip chip--tech" data-tech="javascript">JavaScript</span>
+                      <span class="chip chip--tech" data-tech="socket.io">Socket.IO</span>
+                      <span class="chip chip--tech" data-tech="mongodb">MongoDB</span>
+                      <span class="chip chip--tech" data-tech="mongoose">Mongoose</span>
+                      <span class="chip chip--tech" data-tech="ejs">EJS</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 11: Movies API -->
+                <div data-detail-id="moveis-apis" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Movies API</h2><span class="inspector-year">2024</span>
+                        <p class="inspector-sub">APIs &amp; Integrations</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Moveis-APIs" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/moveis-apis.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A movie REST API that combines TMDB data with user and review endpoints.</p>
+                    <ul class="impact-list">
+                      <li>Integrated TMDB through an external service, with request validation and centralized error handling.</li>
+                      <li>Modeled movies, users, and reviews using Sequelize and MySQL.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="express.js">Express.js</span>
+                      <span class="chip chip--tech" data-tech="javascript">JavaScript</span>
+                      <span class="chip chip--tech" data-tech="mysql">MySQL</span>
+                      <span class="chip chip--tech" data-tech="sequelize">Sequelize</span>
+                      <span class="chip chip--tech" data-tech="tmdb api">TMDB API</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+
+                <!-- 12: Laravel Storefront -->
+                <div data-detail-id="store-laravel" hidden style="display:flex;flex-direction:column;justify-content:space-between;height:100%;">
+                  <div class="inspector-top">
+                    <div class="inspector-head">
+                      <div class="inspector-title-wrap">
+                        <h2 class="inspector-title">Laravel Storefront</h2><span class="inspector-year">2025</span>
+                        <p class="inspector-sub">Commerce &amp; Payments</p>
+                      </div>
+                      <div class="proj-links">
+                        <a class="pill-link pill-link--accent" href="https://github.com/mohamedalnajjar10/Store-Laravel" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a class="pill-link" href="projects/store-laravel.html">Project details ↗</a>
+                      </div>
+                    </div>
+                    <p class="proj-summary">A server-rendered Laravel storefront and product administration dashboard.</p>
+                    <ul class="impact-list">
+                      <li>Built Blade pages for catalog browsing, cart, and checkout.</li>
+                      <li>Added authenticated profile management and dashboard routes for catalog administration.</li>
+                    </ul>
+                  </div>
+                  <div class="inspector-foot">
+                    <div class="chips-wrap">
+                      <span class="chip chip--tech" data-tech="php">PHP</span>
+                      <span class="chip chip--tech" data-tech="laravel">Laravel</span>
+                      <span class="chip chip--tech" data-tech="blade">Blade</span>
+                      <span class="chip chip--tech" data-tech="eloquent">Eloquent</span>
+                    </div>
+                    <span class="wheel-hint">↑↓ switch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: Technical Skills & Core Stack -->
+          <div class="tab-panel" id="panel-stack" role="tabpanel" aria-labelledby="tab-stack" data-tab-panel="stack" hidden>
+            <div class="stack-grid">
+              <div class="stack-card">
+                <span class="stack-card__label">Backend</span>
+                <div class="chips-wrap">
+                  <span class="chip">Node.js</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">JavaScript</span>
+                  <span class="chip">NestJS</span>
+                  <span class="chip">Express.js</span>
+                  <span class="chip">REST APIs</span>
+                  <span class="chip">OpenAPI / Swagger</span>
+                  <span class="chip">GraphQL</span>
+                </div>
+              </div>
+
+              <div class="stack-card">
+                <span class="stack-card__label">Databases</span>
+                <div class="chips-wrap">
+                  <span class="chip">PostgreSQL</span>
+                  <span class="chip">MySQL</span>
+                  <span class="chip">MongoDB</span>
+                  <span class="chip">Redis</span>
+                  <span class="chip">Prisma ORM</span>
+                  <span class="chip">Sequelize</span>
+                  <span class="chip">Mongoose</span>
+                  <span class="chip">Meilisearch</span>
+                </div>
+              </div>
+
+              <div class="stack-card">
+                <span class="stack-card__label">Async and Real-Time</span>
+                <div class="chips-wrap">
+                  <span class="chip">BullMQ</span>
+                  <span class="chip">background workers</span>
+                  <span class="chip">transactional outbox</span>
+                  <span class="chip">WebSockets</span>
+                  <span class="chip">Socket.IO</span>
+                </div>
+              </div>
+
+              <div class="stack-card">
+                <span class="stack-card__label">Authentication and Security</span>
+                <div class="chips-wrap">
+                  <span class="chip">JWT</span>
+                  <span class="chip">OAuth 2.0</span>
+                  <span class="chip">role-based access control (RBAC)</span>
+                  <span class="chip">TOTP</span>
+                  <span class="chip">AES-256-GCM</span>
+                  <span class="chip">rate limiting</span>
+                </div>
+              </div>
+
+              <div class="stack-card">
+                <span class="stack-card__label">Testing and Delivery</span>
+                <div class="chips-wrap">
+                  <span class="chip">Jest</span>
+                  <span class="chip">Supertest</span>
+                  <span class="chip">unit and integration testing</span>
+                  <span class="chip">Git</span>
+                  <span class="chip">GitHub Actions</span>
+                  <span class="chip">Docker</span>
+                  <span class="chip">Docker Compose</span>
+                  <span class="chip">S3-compatible storage</span>
+                </div>
+              </div>
+
+              <div class="stack-card">
+                <span class="stack-card__label">AI and Search</span>
+                <div class="chips-wrap">
+                  <span class="chip">Google Gemini API</span>
+                  <span class="chip">retrieval-augmented generation (RAG)</span>
+                  <span class="chip">embeddings</span>
+                  <span class="chip">semantic search</span>
+                  <span class="chip">PostgreSQL full-text search</span>
+                  <span class="chip">OCR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: Education & Certifications -->
+          <div class="tab-panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" data-tab-panel="education" hidden>
+            <div class="edu-view">
+              <div class="inspector-top">
+                <div class="inspector-head">
+                  <div class="inspector-title-wrap">
+                    <h2 class="inspector-title">Al Azhar University, Gaza, Palestine</h2>
+                    <p class="inspector-sub">Bachelor’s Degree in Software Engineering</p>
+                  </div>
+                  <span class="date-pill">2020–2026</span>
+                </div>
+
+                <div class="stat-strip">
+                  <div class="stat-cell">Education: <strong>Software Engineering</strong></div>
+                  <div class="stat-cell">Location: <strong>Egypt</strong></div>
+                  <div class="stat-cell">Years: <strong>2020–2026</strong></div>
+                </div>
+
+                <ul class="impact-list">
+                  <li>For backend engineering roles and project inquiries.</li>
+                </ul>
+              </div>
+
+              <div class="edu-course-box">
+                <span class="edu-course-label">Certifications and training</span>
+                <div class="chips-wrap">
+                  <span class="chip">Node.js Application Developer (2024)</span>
+                  <span class="chip">Nest.js Application Developer (2024)</span>
+                  <span class="chip">Understanding SDLC, System Requirements, Agile, Scrum and Jira (2025)</span>
+                  <span class="chip">Docker Practical Course (2026)</span>
+                  <span class="chip">GitLab CI/CD (2026)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
-    <aside class="hero-stack" aria-labelledby="stack-title">
-      <h2 id="stack-title">Core stack</h2>
-      <dl><div><dt>APIs</dt><dd>NestJS · Express.js</dd></div><div><dt>Data</dt><dd>PostgreSQL · MySQL · MongoDB</dd></div><div><dt>Processing</dt><dd>Redis · BullMQ</dd></div></dl>
-    </aside>
-  </div>
-</section>
-<section id="about" class="frame section about" aria-labelledby="about-title">
-  <div>
-    <h2 id="about-title">About me</h2>
-    <p class="lead">Backend developer building REST APIs and data workflows with Node.js, TypeScript, NestJS, and Express.js. Project work includes marketplace and healthcare APIs, third-party OAuth integrations, real-time notifications, and AI-assisted document ingestion and search.</p>
-    <div class="education" id="education">
-      <h3>Education</h3>
-      <p><strong>Bachelor’s Degree in Software Engineering</strong></p><p>Al Azhar University, Gaza, Palestine | 2020–2026</p>
-      <details><summary>Certifications and training</summary><ul><li>Node.js Application Developer (2024)</li><li>Nest.js Application Developer (2024)</li><li>Understanding SDLC, System Requirements, Agile, Scrum and Jira (2025)</li><li>Docker Practical Course (2026)</li><li>GitLab CI/CD (2026)</li></ul></details>
-    </div>
-  </div>
-  <figure class="portrait"><img src="imgs/ME.jpg" alt="Portrait of Mohamed Al Najjar" width="2048" height="2050" loading="lazy"></figure>
-</section>
-<section class="tinted" id="experience" aria-labelledby="experience-title">
-  <div class="frame section">
-    <h2 id="experience-title">Project experience</h2>
-    <ol class="timeline"><li><time datetime="2026">2026</time><div><h3>Backend APIs and AI workflows</h3><p>Built project APIs for exam preparation, marketplace delivery, healthcare booking, and ad account integrations.</p><ul class="tags" aria-label="Technologies"><li>NestJS</li><li>Prisma</li><li>BullMQ</li><li>Gemini API</li><li>OAuth 2.0</li></ul></div></li><li><time datetime="2025">2025</time><div><h3>Booking, notifications and storefronts</h3><p>Developed property booking and checkout flows, a football match and notifications API, a blood bank API, and a Laravel storefront.</p><ul class="tags" aria-label="Technologies"><li>MySQL</li><li>Sequelize</li><li>Socket.IO</li><li>Stripe</li><li>Laravel</li></ul></div></li><li><time datetime="2024">2024</time><div><h3>Commerce and real-time services</h3><p>Built Express.js projects for e-commerce, wallet transactions, real-time chat, and movie data.</p><ul class="tags" aria-label="Technologies"><li>Express.js</li><li>MongoDB</li><li>Mongoose</li><li>MySQL</li><li>Socket.IO</li></ul></div></li></ol>
-  </div>
-</section>
-<section class="frame wide section" id="projects" aria-labelledby="projects-title">
-  <div class="section-head"><h2 id="projects-title">Projects</h2><a href="https://github.com/mohamedalnajjar10">GitHub profile</a></div>
-  <div class="filter-bar" hidden>
-    <div class="filter-buttons" role="group" aria-label="Filter projects">
-      <button type="button" data-filter="all" aria-pressed="true">All projects</button>
-      <button type="button" data-filter="AI &amp; Search" aria-pressed="false">AI &amp; Search</button><button type="button" data-filter="Commerce &amp; Payments" aria-pressed="false">Commerce &amp; Payments</button><button type="button" data-filter="APIs &amp; Integrations" aria-pressed="false">APIs &amp; Integrations</button>
-    </div>
-    <p class="project-count" role="status">12 projects</p>
-  </div>
-  <div class="project-grid"><article class="project-card" data-category="AI &amp; Search">
-  <a class="media-link" href="projects/full-ai-exam.html" aria-label="Project details for AI Exam Prep Assistant"><div class="project-media media-ai" data-image-slot="full-ai-exam">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/full-ai-exam.webp" alt="Screenshot of AI Exam Prep Assistant" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>AI &amp; Search</span><time datetime="2026">2026</time></p>
-    <h3>AI Exam Prep Assistant</h3>
-    <p>A Tawjihi exam-prep platform that uses curriculum content and past papers to generate practice questions and support a study chat.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>PostgreSQL</li><li>Prisma</li><li>Gemini API</li><li>BullMQ</li><li>Redis</li><li>Next.js</li></ul>
-    <div class="card-links"><a href="projects/full-ai-exam.html">Project details<span class="sr-only"> for AI Exam Prep Assistant</span></a><a href="https://github.com/mohamedalnajjar10/Full-Ai-Exam">GitHub<span class="sr-only"> repository for AI Exam Prep Assistant</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="Commerce &amp; Payments">
-  <a class="media-link" href="projects/gaza-express-project.html" aria-label="Project details for Gaza Express"><div class="project-media media-commerce" data-image-slot="gaza-express-project">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/gaza-express-project.webp" alt="Screenshot of Gaza Express" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2026">2026</time></p>
-    <h3>Gaza Express</h3>
-    <p>A marketplace and delivery backend for store discovery, product catalogs, ordering, and order operations.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Redis</li><li>MinIO</li><li>Jest</li><li>Docker</li><li>GitHub Actions</li></ul>
-    <div class="card-links"><a href="projects/gaza-express-project.html">Project details<span class="sr-only"> for Gaza Express</span></a><a href="https://github.com/mohamedalnajjar10/Gaza-Express-Project">GitHub<span class="sr-only"> repository for Gaza Express</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/care-project.html" aria-label="Project details for Care Project"><div class="project-media media-api" data-image-slot="care-project">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/care-project.webp" alt="Screenshot of Care Project" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2026">2026</time></p>
-    <h3>Care Project</h3>
-    <p>A healthcare booking API for finding doctors, managing appointments, and processing payments.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Meilisearch</li><li>Socket.IO</li><li>Stripe</li><li>PayPal</li><li>Jest</li></ul>
-    <div class="card-links"><a href="projects/care-project.html">Project details<span class="sr-only"> for Care Project</span></a><a href="https://github.com/mohamedalnajjar10/Care-Project">GitHub<span class="sr-only"> repository for Care Project</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/unified-ad-campaign-manager.html" aria-label="Project details for Unified Ad Campaign Manager"><div class="project-media media-api" data-image-slot="unified-ad-campaign-manager">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/unified-ad-campaign-manager.webp" alt="Screenshot of Unified Ad Campaign Manager" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2026">2026</time></p>
-    <h3>Unified Ad Campaign Manager</h3>
-    <p>An ad-platform account integration backend with a shared OAuth provider interface and a Prisma campaign schema.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>OAuth 2.0</li><li>AES-256-GCM</li><li>Docker</li></ul>
-    <div class="card-links"><a href="projects/unified-ad-campaign-manager.html">Project details<span class="sr-only"> for Unified Ad Campaign Manager</span></a><a href="https://github.com/mohamedalnajjar10/Unified-Ad-Campaign-Manager">GitHub<span class="sr-only"> repository for Unified Ad Campaign Manager</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="Commerce &amp; Payments">
-  <a class="media-link" href="projects/airbnb.html" aria-label="Project details for Property Booking Marketplace"><div class="project-media media-commerce" data-image-slot="airbnb">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/airbnb.webp" alt="Screenshot of Property Booking Marketplace" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2025">2025</time></p>
-    <h3>Property Booking Marketplace</h3>
-    <p>An Airbnb-inspired API for listing properties and booking stays.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Prisma</li><li>Stripe</li><li>PayPal</li><li>Jest</li></ul>
-    <div class="card-links"><a href="projects/airbnb.html">Project details<span class="sr-only"> for Property Booking Marketplace</span></a><a href="https://github.com/mohamedalnajjar10/Airbnb-">GitHub<span class="sr-only"> repository for Property Booking Marketplace</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="Commerce &amp; Payments">
-  <a class="media-link" href="projects/e-commerce.html" aria-label="Project details for E-Commerce Backend API"><div class="project-media media-commerce" data-image-slot="e-commerce">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/e-commerce.webp" alt="Screenshot of E-Commerce Backend API" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2024">2024</time></p>
-    <h3>E-Commerce Backend API</h3>
-    <p>An e-commerce REST API covering product discovery and the shopping-to-order flow.</p>
-    <ul class="tags" aria-label="Technologies"><li>Node.js</li><li>Express.js</li><li>JavaScript</li><li>MongoDB</li><li>Mongoose</li><li>JWT</li><li>Stripe</li></ul>
-    <div class="card-links"><a href="projects/e-commerce.html">Project details<span class="sr-only"> for E-Commerce Backend API</span></a><a href="https://github.com/mohamedalnajjar10/E-Commerce">GitHub<span class="sr-only"> repository for E-Commerce Backend API</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="Commerce &amp; Payments">
-  <a class="media-link" href="projects/wallet.html" aria-label="Project details for Digital Wallet API"><div class="project-media media-commerce" data-image-slot="wallet">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/wallet.webp" alt="Screenshot of Digital Wallet API" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2024">2024</time></p>
-    <h3>Digital Wallet API</h3>
-    <p>A digital wallet API for user transfers, top-ups through charging points, and company payments.</p>
-    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>MySQL</li><li>Sequelize</li><li>JWT</li><li>TOTP</li></ul>
-    <div class="card-links"><a href="projects/wallet.html">Project details<span class="sr-only"> for Digital Wallet API</span></a><a href="https://github.com/mohamedalnajjar10/Wallet">GitHub<span class="sr-only"> repository for Digital Wallet API</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/sport.html" aria-label="Project details for Football Match and Notifications API"><div class="project-media media-api" data-image-slot="sport">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/sport.webp" alt="Screenshot of Football Match and Notifications API" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2025">2025</time></p>
-    <h3>Football Match and Notifications API</h3>
-    <p>A football back end for match schedules and details, favorites, subscriptions, and live notifications.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>MySQL</li><li>Sequelize</li><li>Socket.IO</li><li>OpenAI API</li><li>Stripe</li><li>PayPal</li></ul>
-    <div class="card-links"><a href="projects/sport.html">Project details<span class="sr-only"> for Football Match and Notifications API</span></a><a href="https://github.com/mohamedalnajjar10/Sport-">GitHub<span class="sr-only"> repository for Football Match and Notifications API</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/blood-bank-system.html" aria-label="Project details for Blood Bank System"><div class="project-media media-api" data-image-slot="blood-bank-system">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/blood-bank-system.webp" alt="Screenshot of Blood Bank System" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2025">2025</time></p>
-    <h3>Blood Bank System</h3>
-    <p>A NestJS API for managing blood bank users, profiles, and medical history records.</p>
-    <ul class="tags" aria-label="Technologies"><li>NestJS</li><li>TypeScript</li><li>MySQL</li><li>Sequelize</li><li>JWT</li></ul>
-    <div class="card-links"><a href="projects/blood-bank-system.html">Project details<span class="sr-only"> for Blood Bank System</span></a><a href="https://github.com/mohamedalnajjar10/Blood-Bank-System">GitHub<span class="sr-only"> repository for Blood Bank System</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/real-time-chat.html" aria-label="Project details for Real-Time Chat"><div class="project-media media-api" data-image-slot="real-time-chat">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/real-time-chat.webp" alt="Screenshot of Real-Time Chat" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2024">2024</time></p>
-    <h3>Real-Time Chat</h3>
-    <p>A real-time messaging app with session-based sign-in and persistent conversation history.</p>
-    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>Socket.IO</li><li>MongoDB</li><li>Mongoose</li><li>EJS</li></ul>
-    <div class="card-links"><a href="projects/real-time-chat.html">Project details<span class="sr-only"> for Real-Time Chat</span></a><a href="https://github.com/mohamedalnajjar10/real-time-chat-">GitHub<span class="sr-only"> repository for Real-Time Chat</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="APIs &amp; Integrations">
-  <a class="media-link" href="projects/moveis-apis.html" aria-label="Project details for Movies API"><div class="project-media media-api" data-image-slot="moveis-apis">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/moveis-apis.webp" alt="Screenshot of Movies API" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>APIs &amp; Integrations</span><time datetime="2024">2024</time></p>
-    <h3>Movies API</h3>
-    <p>A movie REST API that combines TMDB data with user and review endpoints.</p>
-    <ul class="tags" aria-label="Technologies"><li>Express.js</li><li>JavaScript</li><li>MySQL</li><li>Sequelize</li><li>TMDB API</li></ul>
-    <div class="card-links"><a href="projects/moveis-apis.html">Project details<span class="sr-only"> for Movies API</span></a><a href="https://github.com/mohamedalnajjar10/Moveis-APIs">GitHub<span class="sr-only"> repository for Movies API</span></a></div>
-  </div>
-</article>
-<article class="project-card" data-category="Commerce &amp; Payments">
-  <a class="media-link" href="projects/store-laravel.html" aria-label="Project details for Laravel Storefront"><div class="project-media media-commerce" data-image-slot="store-laravel">
-    <span class="media-art" aria-hidden="true"><i></i><i></i><i></i></span>
-    <template><img src="imgs/projects/store-laravel.webp" alt="Screenshot of Laravel Storefront" width="1200" height="675" loading="lazy"></template>
-  </div></a>
-  <div class="card-content">
-    <p class="card-meta"><span>Commerce &amp; Payments</span><time datetime="2025">2025</time></p>
-    <h3>Laravel Storefront</h3>
-    <p>A server-rendered Laravel storefront and product administration dashboard.</p>
-    <ul class="tags" aria-label="Technologies"><li>PHP</li><li>Laravel</li><li>Blade</li><li>Eloquent</li></ul>
-    <div class="card-links"><a href="projects/store-laravel.html">Project details<span class="sr-only"> for Laravel Storefront</span></a><a href="https://github.com/mohamedalnajjar10/Store-Laravel">GitHub<span class="sr-only"> repository for Laravel Storefront</span></a></div>
-  </div>
-</article></div>
-</section>
-<section id="skills" class="tinted" aria-labelledby="skills-title">
-  <div class="frame section"><h2 id="skills-title">Technical skills</h2>
-    <dl class="skills"><div><dt>Backend</dt><dd>Node.js, TypeScript, JavaScript, NestJS, Express.js, REST APIs, OpenAPI / Swagger, GraphQL</dd></div><div><dt>Databases</dt><dd>PostgreSQL, MySQL, MongoDB, Redis, Prisma ORM, Sequelize, Mongoose, Meilisearch</dd></div><div><dt>Async and Real-Time</dt><dd>BullMQ, background workers, transactional outbox, WebSockets, Socket.IO</dd></div><div><dt>Authentication and Security</dt><dd>JWT, OAuth 2.0, role-based access control (RBAC), TOTP, AES-256-GCM, rate limiting</dd></div><div><dt>Testing and Delivery</dt><dd>Jest, Supertest, unit and integration testing, Git, GitHub Actions, Docker, Docker Compose, S3-compatible storage</dd></div><div><dt>AI and Search</dt><dd>Google Gemini API, retrieval-augmented generation (RAG), embeddings, semantic search, PostgreSQL full-text search, OCR</dd></div></dl>
-  </div>
-</section>
-<section id="contact" class="contact" aria-labelledby="contact-title">
-  <div class="frame section contact-layout">
-    <div><h2 id="contact-title">Get in touch</h2><p>For backend engineering roles and project inquiries.</p></div>
-    <div class="link-row"><a class="button primary" href="mailto:mohamedalnajjar1000@gmail.com">Email Mohamed</a><a class="button outline" href="https://www.linkedin.com/in/mohamedalnajjar10/">LinkedIn</a></div>
-  </div>
-</section>
-</main>
-<footer>
-  <div class="frame footer-layout">
-    <span>Mohamed Al Najjar</span>
-    <div class="link-row">
-      <a href="https://github.com/mohamedalnajjar10">GitHub</a>
-      <a href="https://www.linkedin.com/in/mohamedalnajjar10/">LinkedIn</a>
-      <a href="mailto:mohamedalnajjar1000@gmail.com">Email</a>
-    </div>
-  </div>
-</footer>
+  </main>
+</div>
 </body>
 </html>
